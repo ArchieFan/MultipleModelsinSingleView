@@ -51,10 +51,12 @@ namespace MultipleModelsinSingleView.Controllers
         public ActionResult UseTuple()
         {
             ViewBag.Message = "Using Tuple";
-            var tupleModel = new Tuple<List<Scheme>, List<Member>>(DBContext.GetSchemes(), DBContext.GetMembers());
+            var tupleModel = new Tuple<List<Scheme>, List<Member>>(
+                DBContext.GetSchemes(), DBContext.GetMembers());
             return View(tupleModel);
         }
 
+        // GET: PartialView
         public ActionResult UsePartialView()
         {
             ViewBag.Message = "Using Render Action Method (Partial View)";
