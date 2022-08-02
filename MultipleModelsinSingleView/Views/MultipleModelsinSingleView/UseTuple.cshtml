@@ -1,0 +1,43 @@
+﻿@using MultipleModelsinSingleView.Models;
+@model Tuple<List<Scheme>, List<Member>>
+@{
+    ViewBag.Title = "UseTuple";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Message</h2>
+<p><b>Scheme List</b></p>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+    </tr>
+    @foreach (Scheme Scheme in Model.Item1)
+    {
+        <tr>
+            <td>@Scheme.SchemeId</td>
+            <td>@Scheme.Code</td>
+            <td>@Scheme.Name</td>
+        </tr>
+    }
+</table>
+<p><b>Member List</b></p>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Enrollment No</th>
+    </tr>
+    @foreach (Member Member in Model.Item2)
+    {
+        <tr>
+            <td>@Member.MemberId</td>
+            <td>@Member.Code</td>
+            <td>@Member.Name</td>
+            <td>@Member.EnrollmentNo</td>
+        </tr>
+    }
+</table>
+

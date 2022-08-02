@@ -1,0 +1,19 @@
+﻿@using MultipleModelsinSingleView.Models;
+@model IEnumerable<Scheme>
+
+<p><b>Scheme List</b></p>
+<table class="table" >
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+    </tr>
+    @foreach (Scheme Scheme in Model)
+    {
+        <tr>
+            <td>@Scheme.SchemeId</td>
+            <td>@Scheme.Code</td>
+            <td>@Scheme.Name</td>
+        </tr>
+    }
+</table>

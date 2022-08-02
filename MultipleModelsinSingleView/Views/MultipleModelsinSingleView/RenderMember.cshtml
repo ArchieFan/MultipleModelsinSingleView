@@ -1,0 +1,21 @@
+﻿@using MultipleModelsinSingleView.Models;
+@model IEnumerable<Member>
+
+<p><b>Student List</b></p>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Enrollment No</th>
+    </tr>
+    @foreach (Member member in Model)
+    {
+        <tr>
+            <td>@member.MemberId</td>
+            <td>@member.Code</td>
+            <td>@member.Name</td>
+            <td>@member.EnrollmentNo</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,46 @@
+﻿@using MultipleModelsinSingleView.Models;
+@model dynamic
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Message</h2>
+
+<p><b>Scheme List</b></p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+    </tr>
+    @foreach (Scheme scheme in Model.Schemes)
+    {
+        <tr>
+            <td>@scheme.SchemeId</td>
+            <td>@scheme.Code</td>
+            <td>@scheme.Name</td>
+        </tr>
+    }
+</table>
+
+<p><b>Member List</b></p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Enrollment No</th>
+    </tr>
+    @foreach (Member member in Model.Members)
+    {
+        <tr>
+            <td>@member.MemberId</td>
+            <td>@member.Code</td>
+            <td>@member.Name</td>
+            <td>@member.EnrollmentNo</td>
+        </tr>
+    }
+</table>
